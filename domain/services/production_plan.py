@@ -34,7 +34,7 @@ class ProductionPlanService:
             else:
                 available_power = plant.pmax
 
-            # checks if there’s still load left to be supplied.
+            # checks if there's still load left to be supplied.
             if remaining_load > 0:
                 # makes sure the plant generates enough power to meet its minimum requirement
                 # without exceeding the load needed or its maximum available power.
