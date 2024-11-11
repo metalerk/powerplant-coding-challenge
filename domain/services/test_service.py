@@ -20,5 +20,5 @@ def test_production_plan_service_generates_correct_output():
 
 def test_production_plan_service_with_excessive_load():
     service = ProductionPlanService(load=2000, fuels=fuels, powerplants=powerplants)
-    with pytest.raises(ValueError, match="Unable to meet the required load"):
+    with pytest.raises(ValueError, match="Unable to meet the required energy load with given powerplants"):
         service.generate_plan()
