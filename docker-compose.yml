@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  production-planner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8888:8888"
+    environment:
+      - UVICORN_PORT=8888
+
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["poetry", "run", "pytest", "--maxfail=1", "--disable-warnings"]
+    environment:
+      - UVICORN_PORT=8888
